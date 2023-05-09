@@ -24,16 +24,36 @@ useEffect(() => {
 
     return (
     <form className="todo-form" onSubmit={handleSubmit}>
-{props.edit ? ( <input
-        type="text"
-        placeholder="Add a ToDo"
+{props.edit ? ( 
+<>
+<input
+        // type='text'
+        placeholder='Update your item'
         value={input}
-        name="text"
-        className="todo-input"
+        name='text'
+        className='todo-input'
         onChange={handleChange}
         ref={inputRef}
       />
-      <button className="todo-button">Add ToDo</button>) : ()}
+      <button className='todo-button edit'>
+        Update
+      </button>
+      </>
+      ) : (
+        <>
+        <input
+        type='text'
+        placeholder='Update your item'
+        value={input}
+        name='text'
+        className='todo-input'
+        onChange={handleChange}
+        ref={inputRef}
+      />
+      <button className='todo-button'>Update</button>
+      </>
+      )
+      }
 
       
     </form>
